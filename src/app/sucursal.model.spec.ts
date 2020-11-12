@@ -65,19 +65,15 @@ describe('Sucursal', () => {
     ).toBeGreaterThanOrEqual(5000);
   });
 
-  it('6. Depósitos válidos y verificacion del saldo en la cuenta ', function () {
-    var newAccount = Substitute.for<Count>();
-    var newBalance = 0;
+  it('6. Depósitos válidos y verificacion del saldo en la cuenta ', function () {    
     var deposit1 = 5000;
     var deposit2 = 5000;
-    newAccount.setCantidadDinero(newBalance);
-    newAccount.depositar(deposit1);
-    newAccount.depositar(deposit2);
-    newAccount.getCantidadDinero().returns(10000);
-    cliente.setCuentas(newAccount);
-    expect (
-      newAccount.getCantidadDinero()
-    ).toMatch("10000");
+    var saldo = 110000;
+    cuenta.depositar(deposit1);
+    cuenta.depositar(deposit2);
+    cuenta.getCantidadDinero().returns(saldo);
+    expect(cuenta.getCantidadDinero()).toBe(saldo);
   });
+
 
 });
