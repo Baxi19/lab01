@@ -7,6 +7,7 @@ import { StubShopDataAccess } from './stub-shop-data-access.model';
 import { Substitute, Arg } from '@fluffy-spoon/substitute';
 import { IShopDataAccess } from './ishop-data-access';
 
+// Prueba de instancia
 describe('Order', () => {
   it('should create an instance', () => {
     let dataAccess = new DummyShopDataAccess();
@@ -14,6 +15,7 @@ describe('Order', () => {
   });
 });
 
+// Ejemplo de DUMMY
 describe('Dummy', function () {
   it('Create order', function () {
     var dataAccess = new DummyShopDataAccess();
@@ -24,6 +26,7 @@ describe('Dummy', function () {
   });
 });
 
+// Ejemplo de STUB
 describe('Stub', function () {
   it('Save order', function () {
     var dataAccess = new StubShopDataAccess();
@@ -33,6 +36,7 @@ describe('Stub', function () {
     });    
 });
 
+// Ejemplo de SPY
 describe('Spy', function () {
   it('Save order', function () {
     var dataAccess = new SpyShopDataAccess();
@@ -44,6 +48,7 @@ describe('Spy', function () {
   });
 });
 
+// Ejemplo de FAKE
 describe('Fake', function () {
   it('Calculate order', function () {
     var dataAccess = new FakeShopDataAccess();
@@ -56,6 +61,7 @@ describe('Fake', function () {
     });
 });
 
+// Ejemplo de MOCK
 describe('Mock', function () {
   it('Save order Mock', function () {
     const dataAccess = Substitute.for<IShopDataAccess>();
