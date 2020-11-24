@@ -9,6 +9,7 @@ export class OrderLine {
       this.cantidad = cantidad;
       this.order = order;
   }
+  // tslint:disable-next-line: typedef
   getSubTotal() {
       return this.cantidad * this.order.getDataAccess().getProductPrice(this.idItem);
   }
